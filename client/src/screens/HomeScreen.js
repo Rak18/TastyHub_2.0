@@ -8,6 +8,7 @@ import Product from "../components/Product";
 
 //Actions
 import { getProducts as listProducts } from "../redux/actions/productActions";
+import HeroPage from '../components/HeroPage';
 
 export const HomeScreen = () => {
   const dispatch = useDispatch();
@@ -22,7 +23,9 @@ export const HomeScreen = () => {
 
   return (
     <div className="homescreen">
-      <h2 className="homescreen__title">Latest Items</h2>
+        <HeroPage />
+        <div style={{marginTop:'2rem'}}/>
+      <h2 className="homescreen__title">Our Popular Dishes</h2>
       <div className="homescreen__products">
         {loading ? (
           <h2>Loading...</h2>

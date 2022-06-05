@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 import "./Product.css";
 import { Link } from "react-router-dom";
 
-  const Product = ({ imageUrl, description, price, name, productId }) => {
+const Product = ({ imageUrl, description, price, name, productId }) => {
   return (
     <div className="product">
       <img src={imageUrl} alt={name} />
@@ -10,9 +10,13 @@ import { Link } from "react-router-dom";
       <div className="product__info">
         <p className="info__name">{name}</p>
 
-        <p className="info__description">{description.substring(0, 100)}...</p>
+        <div className="price_desc">
+          <p className="info__description">
+            {description.substring(0, 100)}...
+          </p>
 
-        <p className="info__price">Rs/-{price}</p>
+          <p className="info__price">Rs/-{price}</p>
+        </div>
 
         <Link to={`/product/${productId}`} className="info__button">
           View
@@ -22,4 +26,3 @@ import { Link } from "react-router-dom";
   );
 };
 export default Product;
-
